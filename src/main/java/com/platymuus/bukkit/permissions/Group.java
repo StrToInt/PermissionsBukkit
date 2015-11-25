@@ -75,11 +75,8 @@ public final class Group {
 
     public List<Player> getOnlinePlayers() {
         ArrayList<Player> result = new ArrayList<Player>();
-        for (UUID uuid : getPlayerUUIDs()) {
-            Player player = Bukkit.getServer().getPlayer(uuid);
-            if (player != null && player.isOnline()) {
-                result.add(player);
-            }
+        for (Player uuid : Bukkit.getServer().getOnlinePlayers()) {
+                result.add(uuid);
         }
         return result;
     }
